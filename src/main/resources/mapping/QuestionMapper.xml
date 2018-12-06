@@ -10,7 +10,7 @@
     <result column="LIKE_COUNT" jdbcType="INTEGER" property="likeCount" />
     <result column="GMT_CREATE" jdbcType="BIGINT" property="gmtCreate" />
     <result column="GMT_MODIFIED" jdbcType="BIGINT" property="gmtModified" />
-    <result column="STATUS" jdbcType="TINYINT" property="status" />
+    <result column="STATUS" jdbcType="INTEGER" property="status" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.codedrinker.model.Question">
     <result column="CONTENT" jdbcType="CLOB" property="content" />
@@ -135,7 +135,7 @@
       CONTENT)
     values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
       #{commentCount,jdbcType=INTEGER}, #{viewCount,jdbcType=INTEGER}, #{likeCount,jdbcType=INTEGER}, 
-      #{gmtCreate,jdbcType=BIGINT}, #{gmtModified,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}, 
+      #{gmtCreate,jdbcType=BIGINT}, #{gmtModified,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}, 
       #{content,jdbcType=CLOB})
   </insert>
   <insert id="insertSelective" parameterType="com.codedrinker.model.Question">
@@ -198,7 +198,7 @@
         #{gmtModified,jdbcType=BIGINT},
       </if>
       <if test="status != null">
-        #{status,jdbcType=TINYINT},
+        #{status,jdbcType=INTEGER},
       </if>
       <if test="content != null">
         #{content,jdbcType=CLOB},
@@ -239,7 +239,7 @@
         GMT_MODIFIED = #{record.gmtModified,jdbcType=BIGINT},
       </if>
       <if test="record.status != null">
-        STATUS = #{record.status,jdbcType=TINYINT},
+        STATUS = #{record.status,jdbcType=INTEGER},
       </if>
       <if test="record.content != null">
         CONTENT = #{record.content,jdbcType=CLOB},
@@ -259,7 +259,7 @@
       LIKE_COUNT = #{record.likeCount,jdbcType=INTEGER},
       GMT_CREATE = #{record.gmtCreate,jdbcType=BIGINT},
       GMT_MODIFIED = #{record.gmtModified,jdbcType=BIGINT},
-      STATUS = #{record.status,jdbcType=TINYINT},
+      STATUS = #{record.status,jdbcType=INTEGER},
       CONTENT = #{record.content,jdbcType=CLOB}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -275,7 +275,7 @@
       LIKE_COUNT = #{record.likeCount,jdbcType=INTEGER},
       GMT_CREATE = #{record.gmtCreate,jdbcType=BIGINT},
       GMT_MODIFIED = #{record.gmtModified,jdbcType=BIGINT},
-      STATUS = #{record.status,jdbcType=TINYINT}
+      STATUS = #{record.status,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -305,7 +305,7 @@
         GMT_MODIFIED = #{gmtModified,jdbcType=BIGINT},
       </if>
       <if test="status != null">
-        STATUS = #{status,jdbcType=TINYINT},
+        STATUS = #{status,jdbcType=INTEGER},
       </if>
       <if test="content != null">
         CONTENT = #{content,jdbcType=CLOB},
@@ -322,7 +322,7 @@
       LIKE_COUNT = #{likeCount,jdbcType=INTEGER},
       GMT_CREATE = #{gmtCreate,jdbcType=BIGINT},
       GMT_MODIFIED = #{gmtModified,jdbcType=BIGINT},
-      STATUS = #{status,jdbcType=TINYINT},
+      STATUS = #{status,jdbcType=INTEGER},
       CONTENT = #{content,jdbcType=CLOB}
     where ID = #{id,jdbcType=INTEGER}
   </update>
@@ -335,7 +335,7 @@
       LIKE_COUNT = #{likeCount,jdbcType=INTEGER},
       GMT_CREATE = #{gmtCreate,jdbcType=BIGINT},
       GMT_MODIFIED = #{gmtModified,jdbcType=BIGINT},
-      STATUS = #{status,jdbcType=TINYINT}
+      STATUS = #{status,jdbcType=INTEGER}
     where ID = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

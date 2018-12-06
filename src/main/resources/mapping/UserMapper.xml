@@ -7,10 +7,10 @@
     <result column="TOKEN" jdbcType="CHAR" property="token" />
     <result column="NICK_NAME" jdbcType="VARCHAR" property="nickName" />
     <result column="AVATAR_URL" jdbcType="VARCHAR" property="avatarUrl" />
-    <result column="GENDER" jdbcType="TINYINT" property="gender" />
+    <result column="GENDER" jdbcType="INTEGER" property="gender" />
     <result column="GMT_CREATE" jdbcType="BIGINT" property="gmtCreate" />
     <result column="GMT_MODIFIED" jdbcType="BIGINT" property="gmtModified" />
-    <result column="STATUS" jdbcType="TINYINT" property="status" />
+    <result column="STATUS" jdbcType="INTEGER" property="status" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -109,8 +109,8 @@
       GMT_CREATE, GMT_MODIFIED, STATUS
       )
     values (#{id,jdbcType=INTEGER}, #{openid,jdbcType=CHAR}, #{token,jdbcType=CHAR}, 
-      #{nickName,jdbcType=VARCHAR}, #{avatarUrl,jdbcType=VARCHAR}, #{gender,jdbcType=TINYINT}, 
-      #{gmtCreate,jdbcType=BIGINT}, #{gmtModified,jdbcType=BIGINT}, #{status,jdbcType=TINYINT}
+      #{nickName,jdbcType=VARCHAR}, #{avatarUrl,jdbcType=VARCHAR}, #{gender,jdbcType=INTEGER}, 
+      #{gmtCreate,jdbcType=BIGINT}, #{gmtModified,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.codedrinker.model.User">
@@ -161,7 +161,7 @@
         #{avatarUrl,jdbcType=VARCHAR},
       </if>
       <if test="gender != null">
-        #{gender,jdbcType=TINYINT},
+        #{gender,jdbcType=INTEGER},
       </if>
       <if test="gmtCreate != null">
         #{gmtCreate,jdbcType=BIGINT},
@@ -170,7 +170,7 @@
         #{gmtModified,jdbcType=BIGINT},
       </if>
       <if test="status != null">
-        #{status,jdbcType=TINYINT},
+        #{status,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -199,7 +199,7 @@
         AVATAR_URL = #{record.avatarUrl,jdbcType=VARCHAR},
       </if>
       <if test="record.gender != null">
-        GENDER = #{record.gender,jdbcType=TINYINT},
+        GENDER = #{record.gender,jdbcType=INTEGER},
       </if>
       <if test="record.gmtCreate != null">
         GMT_CREATE = #{record.gmtCreate,jdbcType=BIGINT},
@@ -208,7 +208,7 @@
         GMT_MODIFIED = #{record.gmtModified,jdbcType=BIGINT},
       </if>
       <if test="record.status != null">
-        STATUS = #{record.status,jdbcType=TINYINT},
+        STATUS = #{record.status,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -222,10 +222,10 @@
       TOKEN = #{record.token,jdbcType=CHAR},
       NICK_NAME = #{record.nickName,jdbcType=VARCHAR},
       AVATAR_URL = #{record.avatarUrl,jdbcType=VARCHAR},
-      GENDER = #{record.gender,jdbcType=TINYINT},
+      GENDER = #{record.gender,jdbcType=INTEGER},
       GMT_CREATE = #{record.gmtCreate,jdbcType=BIGINT},
       GMT_MODIFIED = #{record.gmtModified,jdbcType=BIGINT},
-      STATUS = #{record.status,jdbcType=TINYINT}
+      STATUS = #{record.status,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -246,7 +246,7 @@
         AVATAR_URL = #{avatarUrl,jdbcType=VARCHAR},
       </if>
       <if test="gender != null">
-        GENDER = #{gender,jdbcType=TINYINT},
+        GENDER = #{gender,jdbcType=INTEGER},
       </if>
       <if test="gmtCreate != null">
         GMT_CREATE = #{gmtCreate,jdbcType=BIGINT},
@@ -255,7 +255,7 @@
         GMT_MODIFIED = #{gmtModified,jdbcType=BIGINT},
       </if>
       <if test="status != null">
-        STATUS = #{status,jdbcType=TINYINT},
+        STATUS = #{status,jdbcType=INTEGER},
       </if>
     </set>
     where ID = #{id,jdbcType=INTEGER}
@@ -266,10 +266,10 @@
       TOKEN = #{token,jdbcType=CHAR},
       NICK_NAME = #{nickName,jdbcType=VARCHAR},
       AVATAR_URL = #{avatarUrl,jdbcType=VARCHAR},
-      GENDER = #{gender,jdbcType=TINYINT},
+      GENDER = #{gender,jdbcType=INTEGER},
       GMT_CREATE = #{gmtCreate,jdbcType=BIGINT},
       GMT_MODIFIED = #{gmtModified,jdbcType=BIGINT},
-      STATUS = #{status,jdbcType=TINYINT}
+      STATUS = #{status,jdbcType=INTEGER}
     where ID = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

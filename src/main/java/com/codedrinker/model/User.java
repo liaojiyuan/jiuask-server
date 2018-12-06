@@ -11,13 +11,13 @@ public class User {
 
     private String avatarUrl;
 
-    private Byte gender;
+    private Integer gender;
 
     private Long gmtCreate;
 
     private Long gmtModified;
 
-    private Byte status;
+    private Integer status;
 
     public Integer getId() {
         return id;
@@ -59,11 +59,11 @@ public class User {
         this.avatarUrl = avatarUrl == null ? null : avatarUrl.trim();
     }
 
-    public Byte getGender() {
+    public Integer getGender() {
         return gender;
     }
 
-    public void setGender(Byte gender) {
+    public void setGender(Integer gender) {
         this.gender = gender;
     }
 
@@ -83,11 +83,11 @@ public class User {
         this.gmtModified = gmtModified;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 }

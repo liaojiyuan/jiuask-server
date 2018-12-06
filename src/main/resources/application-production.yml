@@ -13,7 +13,7 @@ wechat:
   secret: ${WECHAT_SECRET}
 
 db:
-  url: ${JDBC_DATABASE_URL:jdbc:mysql://localhost:3306/jjuask}&useSSL=false&characterEncoding=UTF-8
-  username: ${JDBC_DATABASE_USERNAME:root}
-  password: ${JDBC_DATABASE_PASSWORD:153182}
-  driver: com.mysql.jdbc.Driver
+  url: ${JDBC_DATABASE_URL:jdbc:postgresql://ec2-50-17-203-51.compute-1.amazonaws.com:5432/d7u9s55dhv0te}
+  username: ${JDBC_DATABASE_USERNAME:hmwxwqwnfqeiso}
+  password: ${JDBC_DATABASE_PASSWORD:6fb17e99198e978bb3d116fcf18cfc7fafc039a62f263a29db4ddd1baa2dbd61}
+  driver: org.postgresql.Driver
