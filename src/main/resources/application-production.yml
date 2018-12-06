@@ -13,7 +13,7 @@ wechat:
   secret: ${WECHAT_SECRET}
 
 db:
-  url: ${JDBC_DATABASE_URL:jdbc:h2:~/jjuask}&useUnicode=true&characterEncoding=UTF-8
-  username: ${JDBC_DATABASE_USERNAME:sa}
-  password: ${JDBC_DATABASE_PASSWORD:sa}
-  driver: org.h2.Driver
+  url: ${JDBC_DATABASE_URL:jdbc:mysql://localhost:3306/jjuask}&useUnicode=true&characterEncoding=UTF-8
+  username: ${JDBC_DATABASE_USERNAME:root}
+  password: ${JDBC_DATABASE_PASSWORD:153182}
+  driver: com.mysql.jdbc.Driver

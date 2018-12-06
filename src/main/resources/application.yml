@@ -10,8 +10,13 @@ server:
 wechat:
   appid: wx0c3aa6eafda7159a
   secret: c5a7d095ab675343cb36af86700b04d7
+#db:
+#  url:jdbc:h2:~/jjuask
+#  username:sa
+#  password:sa
+#  driver:org.h2.Driver
 db:
-  url:jdbc:h2:~/jjuask
-  username:sa
-  password:sa
-  driver:org.h2.Driver
+  url:jdbc:mysql://localhost:3306/jjuask?useSSL=false
+  username:root
+  password:153182
+  driver:com.mysql.jdbc.Driver

@@ -13,10 +13,10 @@
         <commentGenerator>
             <property name="suppressAllComments" value="true"></property>
         </commentGenerator>
-        <jdbcConnection driverClass="org.h2.Driver"
-                        connectionURL="jdbc:h2:~/jiuask"
-                        userId="sa"
-                        password="sa">
+        <jdbcConnection driverClass="${db.driver}"
+                        connectionURL="${db.url}"
+                        userId="${db.username}"
+                        password="${db.password}">
         </jdbcConnection>
 
         <javaTypeResolver>
