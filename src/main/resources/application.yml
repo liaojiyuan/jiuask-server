@@ -15,8 +15,8 @@ wechat:
 #  username:sa
 #  password:sa
 #  driver:org.h2.Driver
-db:
-  url:jdbc:mysql://localhost:3306/jjuask?useSSL=false
-  username:root
-  password:153182
-  driver:com.mysql.jdbc.Driver
+#db:
+#  url:jdbc:mysql://localhost:3306/jjuask?useSSL=false
+#  username:root
+#  password:153182
+#  driver:com.mysql.jdbc.Driver

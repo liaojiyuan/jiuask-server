@@ -11,8 +11,9 @@
     <context:annotation-config/>
     <context:property-placeholder/>
     <bean class="java.net.URI" id="dbUrl">
-        <constructor-arg value="#{systemEnvironment['DATABASE_URI']}"/>
-    </bean>
+       <constructor-arg value="#{systemEnvironment['DATABASE_URI']}"/>
+<!--       <constructor-arg value="postgres://hmwxwqwnfqeiso:6fb17e99198e978bb3d116fcf18cfc7fafc039a62f263a29db4ddd1baa2dbd61@ec2-50-17-203-51.compute-1.amazonaws.com:5432/d7u9s55dhv0te"></constructor-arg>    
+ -->    </bean>
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 url、user、password -->
         <property name="url" value="#{'jdbc:postgresql://'+@dbUrl.getHost()+':'+@dbUrl.getPort()+'/'+@dbUrl.getPath()+'ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory'}"/>
